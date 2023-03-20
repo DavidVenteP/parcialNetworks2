@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 
-const password = ''
-// const password = 'contrasena123'
+// const password = ''
+const password = 'contrasena123'
 // Crea una conexión a la base de datos
 // !!!! --- PAQUETES
 async function ingresarPaquete(producto) {
