@@ -18,8 +18,8 @@ async function ingresarPaquete(producto) {
         resultado = await conexion.execute('INSERT INTO paquete VALUES(null,?,?,?)',
             [json1.descripcion, json1.user_id, json1.status_id]);
         // * Crea registro en NOTIFICATION con el registro creado en PAQUETE
-        resultado = await conexion.execute('INSERT INTO notification VALUES(null,?,?,?,null)',
-            [resultado[0].insertId, json1.user_id, json1.status_id]);
+        resultado = await conexion.execute('INSERT INTO notification VALUES(null,?,?,?,?)',
+            [resultado[0].insertId, json1.user_id, json1.status_id, new Date().getTime()]);
         // Cierra la conexión
         await conexion.end();
         return true
@@ -41,8 +41,8 @@ async function updatePackage(producto) {
         resultado = await conexion.execute('UPDATE paquete SET status_id = ? WHERE id = ?',
             [json1.status_id, json1.id]);
         // * Crea registro en NOTIFICATION con el registro creado en PAQUETE
-        resultado = await conexion.execute('INSERT INTO notification VALUES(null,?,?,?,null)',
-            [json1.id, json1.user_id, json1.status_id]);
+        resultado = await conexion.execute('INSERT INTO notification VALUES(null,?,?,?,?)',
+            [json1.id, json1.user_id, json1.status_id, new Date().getTime()]);
         // * Trae el nombre de la notificación
         resultado = await conexion.execute('SELECT name FROM status WHERE id = ?', [json1.status_id]);
         // Cierra la conexión
