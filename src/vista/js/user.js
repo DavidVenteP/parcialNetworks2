@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    const host_conexion = "192.168.100.2";
-    // const host_conexion = "localhost";
+    // const host_conexion = "192.168.100.2";
+    const host_conexion = "localhost";
     // const host_conexion = "www.paqueteria.ia";
     if (JSON.parse(sessionStorage.getItem('user')).rol === "CUSTOMER") {
         window.location.href = `http://${host_conexion}:3000/`
@@ -52,7 +52,7 @@ $(document).ready(function() {
         const passwordUser = $("#passwordUser").val();
         const rolUser = $("#rolUser").val();
         $("#errorsReport").html("");
-        $("#alertUser").hide();
+        $("#alertPackage").hide();
         if (nameUser === undefined || nameUser === "") {
             errorsReport += "El nombre no puede estar vacío.\n"
         }
@@ -84,7 +84,7 @@ $(document).ready(function() {
             });
         } else {
             $("#errorsReport").html(errorsReport);
-            $("#alertUser").show();
+            $("#alertPackage").show();
         }
     });
     $("#bodyContent").on("click", ".edit_user", function() {
@@ -118,6 +118,7 @@ $(document).ready(function() {
         });
     });
     $("#bodyContent").on("click", "#saveChangesUser", function() {
+        console.log("sdas")
         let errorsReport = ""
         const idUser = $("#idUser").val();
         const lastRolUser = $("#lastRolUser").val();
@@ -131,8 +132,9 @@ $(document).ready(function() {
         if (lastRolUser === rolUser) {
             errorsReport += "Debe elegir un rol diferente al actual.\n"
         }
+        console.log('hola')
         if (errorsReport.length === 0) {
-            jQuery.ajax({
+            $.ajax({
                 type: "PUT",
                 url: "/cambiarRol",
                 data: {rol: rolUser, id:idUser},
@@ -149,7 +151,7 @@ $(document).ready(function() {
             });
         } else {
             $("#errorsReport").html(errorsReport);
-            $("#alertUser").show();
+            $("#alertPackage").show();
         }
     });
 });
