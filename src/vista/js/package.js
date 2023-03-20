@@ -1,8 +1,8 @@
 $(document).ready(function() {
     let data_package;
-    const host_conexion = "192.168.100.2";
+    // const host_conexion = "192.168.100.2";
     // const host_conexion = "localhost";
-    // const host_conexion = "www.paqueteria.me";
+    const host_conexion = "www.paqueteria.me";
     async function getDataPackage() {
         const result = fetch(`http://${host_conexion}:3000/traerPaquetes`, {
                 method: 'GET',

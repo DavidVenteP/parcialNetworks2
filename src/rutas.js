@@ -2,6 +2,9 @@ const {Router} = require('express');
 const router = Router();
 const negocio = require('./negocio/negocio');
 const bodyParser = require('body-parser');
+// const host_conexion = "192.168.100.2";
+// const host_conexion = "localhost";
+    const host_conexion = "www.paqueteria.me";
 router.use(bodyParser.urlencoded({ extended: false }));
 var path = require('path');
 
@@ -31,7 +34,7 @@ router.get('/usuarios', (req, res) => {
 router.get('/usuarios/logout', (req, res) => {
     req.session.user = {}
     req.session.save(function (err) {
-        res.redirect("http://192.168.100.2:3000/loginUser");
+        res.redirect(`http://${host_conexion}:3000/loginUser`);
     })
 });
 

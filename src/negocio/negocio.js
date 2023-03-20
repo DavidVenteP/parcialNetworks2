@@ -1,6 +1,9 @@
 const datos = require('../datos/datos');
 var ssn;
 var path = require('path');
+// const host_conexion = "192.168.100.2";
+// const host_conexion = "localhost";
+    const host_conexion = "www.paqueteria.me";
 // !!!! --- PAQUETES
 async function ingresarPaqueteFunction(req, res) {
     var desc = req.body.description;
@@ -82,7 +85,7 @@ async function loginUserFunction(req, res) {
         
     } else {
         ssn.user = resultado[0];
-        res.redirect("http://192.168.100.2:3000/");
+        res.redirect(`http://${host_conexion}:3000/`);
     }
 }
 async function createUserFunction(req, res) {
