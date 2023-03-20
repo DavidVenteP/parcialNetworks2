@@ -31,7 +31,7 @@ router.get('/usuarios', (req, res) => {
 router.get('/usuarios/logout', (req, res) => {
     req.session.user = {}
     req.session.save(function (err) {
-        res.redirect('192.168.100.2:3000/loginUser');
+        res.redirect("http://192.168.100.2:3000/loginUser");
     })
 });
 
