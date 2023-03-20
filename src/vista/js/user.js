@@ -118,7 +118,6 @@ $(document).ready(function() {
         });
     });
     $("#bodyContent").on("click", "#saveChangesUser", function() {
-        console.log("sdas")
         let errorsReport = ""
         const idUser = $("#idUser").val();
         const lastRolUser = $("#lastRolUser").val();
@@ -132,14 +131,12 @@ $(document).ready(function() {
         if (lastRolUser === rolUser) {
             errorsReport += "Debe elegir un rol diferente al actual.\n"
         }
-        console.log('hola')
         if (errorsReport.length === 0) {
             $.ajax({
                 type: "PUT",
                 url: "/cambiarRol",
                 data: {rol: rolUser, id:idUser},
                 complete: function(response) {
-                    console.log(response.responseJSON);
                     if (response.responseJSON !== false || response.responseJSON !== undefined) {
                         sessionStorage.setItem("notification", `Se ha actualizo el rol del usuario ${response.responseJSON.name}.`)
                         window.location.reload();
