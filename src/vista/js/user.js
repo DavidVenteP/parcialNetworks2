@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    const host_conexion = "localhost";
+    const host_conexion = "192.168.100.2";
+    // const host_conexion = "localhost";
     // const host_conexion = "www.paqueteria.ia";
     if (JSON.parse(sessionStorage.getItem('user')).rol === "CUSTOMER") {
         window.location.href = `http://${host_conexion}:3000/`
