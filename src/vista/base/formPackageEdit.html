@@ -1,0 +1,34 @@
+<input type="hidden" name="idPackage" id="idPackage" value="">
+<input type="hidden" name="lastStatusCurrentPackage" id="lastStatusCurrentPackage" value="">
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Nombre</span>
+    </div>
+    <input type="text" class="form-control is_disabled_package" aria-label="Amount (to the nearest dollar)" name="descriptionPackage" id="descriptionPackage" value="" disabled>
+</div>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Estado actual</span>
+    </div>
+    <select class="form-control is_disabled_package" name="statusCurrentPackage" id="statusCurrentPackage">
+    </select>
+</div>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Usuario dueño</span>
+    </div>
+    <input type="text" class="form-control is_disabled_package" aria-label="Amount (to the nearest dollar)" name="userPackage" id="userPackage" value="" disabled>
+</div>
+<div id="containerNotifications">
+  <p>Notificaciones</p>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col"># Estado</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Fecha y hora</th>
+      </tr>
+    </thead>
+    <tbody id="packageTbody"></tbody>
+  </table>
+</div>

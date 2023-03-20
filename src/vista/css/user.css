@@ -1,0 +1,10 @@
+.container-users {
+    gap:2vw;
+    padding: 5vh 2vw;
+}
+.edit_user, .delete_user, .add_user, .delete_car{
+    cursor:pointer
+}
+.edit_user:hover, .delete_user:hover {
+    font-style:italic ;
+}

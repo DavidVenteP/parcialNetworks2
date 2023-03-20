@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head id="headContent">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#headContent").load("base/base_head.html");
+            $("#container").load("base/base_body.html");
+        });
+    </script>
+    <script src="/js/user.js"></script>
+</head>
+
+<body id="bodyContent">
+    <div id="container"></div>
+    <h1>PAQUETES MANIA - 
+        <button id="goToUser" type="button" class="btn btn-primary btn-sm">Crear usuario</button>
+    </h1>
+    <div class="d-flex justify-content-center align-center flex-direction-row flex-wrap container-users w-100" id="usersContent"></div>
+</body>
+
+</html>

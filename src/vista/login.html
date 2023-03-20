@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head id="headContent">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#headContent").load("base/base_head.html")
+        });
+        console.log(window.sessionStorage)
+    </script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Ingreso</h1>
+            <form action="" method="post">
+                <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Usuario</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" id="username" required>
+                </div>
+                </div>
+                <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" name="password" id="password" required>
+                </div>
+                </div>
+                <input type="submit" class="btn btn-success" value="Ingresar">
+            </form>
+        </div>
+    </div>
+</body>

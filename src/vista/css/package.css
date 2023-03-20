@@ -1,0 +1,10 @@
+.container-packages {
+    gap:2vw;
+    padding: 5vh 2vw;
+}
+.edit_package, .view_package, .delete_package, .add_package, .delete_car{
+    cursor:pointer
+}
+.edit_package:hover, .delete_package:hover {
+    font-style:italic ;
+}

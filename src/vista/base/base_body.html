@@ -1,0 +1,75 @@
+<!-- MODAL to Change or DELETE -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        </div>
+        <div id="modalBody" class="modal-body"></div>
+        <div class="modal-footer d-flex flex-column">
+            <div class="alert alert-danger alert-dismissible" id="alertPackage" style="display:none;" role="alert">
+                <p id="errorsReport"></p>
+                <p class="mb-0">Por favor soluciona lo pedido</p>
+            </div>
+          <button type="button" class="btn btn-success" style="display:none;" id="saveChangesPackage">Guardar cambios</button>
+          <button type="button" class="btn btn-success" style="display:none;" id="createPackage">Crear paquete</button>
+          <button type="button" class="btn btn-success" style="display:none;" id="saveChangesUser">Guardar cambios</button>
+          <button type="button" class="btn btn-success" style="display:none;" id="createUser">Crear usuario</button>
+          <button type="button" class="btn btn-success" style="display:none;"></button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modalNotification">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalCenterTitle">Notificación de registro</h5>
+                <button type="button" class="close btnCloseNotification">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div id="notificationBody" class="modal-body"></div>
+            <button type="button" class="btn btn-success btnCloseNotification">De acuerdo</button>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-0">
+    <a class="navbar-brand col-3" href="/">GuaAdis</a>
+    <!-- {% if request.session.login %} -->
+        <div class="col-9 collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="col-7 navbar-nav mr-auto container-nav">
+                <ul class="col-12 navbar-nav mr-auto d-flex justify-content-center align-center" id="ulNav">
+                    <li class="nav-item nav-li-contained px-3">
+                        <a class="nav-link" href="/">Paquetes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5 text-light d-flex flex-dirección-row about-user">
+                <div class="px-3 py-2 font-italic" id="dataUserNav">
+                </div>
+                <span class="nav-link border-left border-right px-3 logout-container text-light" id="btnLogoutNav">
+                    Cerrar sesión
+                </span>
+            </div>
+        </div>
+    <!-- {% endif %} -->
+</nav>
+<script>
+    $(document).ready(function() {
+        $(".btnCloseNotification").click(function () {
+            $(".modalNotification").removeAttr("style");
+        })
+        const showNotification = function () {
+            $(".modalNotification").css("display","flex");
+            $("#notificationBody").html(`${sessionStorage.getItem('notification')}`);
+            $("#closeNotification").show();
+            sessionStorage.removeItem('notification');
+        }
+        if (sessionStorage.getItem('notification') !== null) {
+            showNotification();
+        }
+    });
+</script>
