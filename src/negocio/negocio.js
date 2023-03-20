@@ -82,7 +82,7 @@ async function loginUserFunction(req, res) {
         
     } else {
         ssn.user = resultado[0];
-        res.redirect("192.168.100.2:3000/");
+        res.redirect("http://192.168.100.2:3000/");
     }
 }
 async function createUserFunction(req, res) {
